@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <sdtbool.h>
+
+
 #define QTD_LIMITE 10
 
 
@@ -32,5 +35,19 @@ void imprimeVetor(int v[], int n) {
     printf("}\n");
 }
 
-void maior (int v[], int)
+void maior (int v[], int n) {
+    for (int i = 0 ; i < n ; i += 1) {
+        int comparacao;
+        int max;
+
+        int comparacao = v[i] > v[i + 1];
+        if (comparacao == true) {
+            max = v[i];
+        } else {
+
+            max = v[i + 1]
+        }
+    printf("O maior número do vetor é %d", max);
+    }
+}
 
