@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define QTD_ALUNOS 5
+#define QTD_ALUNOS 30
 
 void digitaNota(int n1[], int n2[], int n);
 void calculaMediaPorAluno(int n1[], int n2[], double med[], int n);
