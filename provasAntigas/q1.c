@@ -14,7 +14,7 @@ int main() {
     imprimirVetor(numeros, TAM);
     ordenarBubbleSort(numeros, TAM);
     imprimirVetor(numeros, TAM);
-    imprimirMaiorImpar(numeros, TAM);
+    //imprimirMaiorImpar(numeros, TAM);
     return 0;
 }
 
@@ -54,4 +54,27 @@ void ordenarBubbleSort(int v[], int n) {
         }
         limite--;
     }
+}
+int ehImpar (int x){
+    if (x % 2 != 0) {
+        return 1;
+    }
+    return 0;
+}
+
+void imprimirMaiorImpar(int v[], int n) {
+    int i = 0;
+    int existeImpar = 0;
+    while (i < n || existeImpar == 1) {
+        ehImpar(v[i]);
+        if (ehImpar == 1) {
+            existeImpar = 1;
+            break;
+        }
+        else if (i == n && existeImpar == 0) {
+            printf("Não existe número ímpar!!!");
+        }
+        i++;
+    }
+    
 }
