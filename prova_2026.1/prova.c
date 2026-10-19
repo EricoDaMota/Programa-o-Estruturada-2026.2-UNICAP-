@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define qtd_colunas 4
 //q.a
 int removerRepetidos(int v[], int tam) {
@@ -28,8 +29,30 @@ void ordenarBubbleSort(int v[], int tam) {
         }
     }
 }
+
+//q.c
+int ehPrimo (int v[], int tam, int num) {
+    for (int i = 0 ; i < tam ; i += 1) {
+        if ( num % v[i] == 0) {
+            return 0;
+        }
+    }
+    return 1;
+
+}
+void preencherPrimo (int v[], int tam) {
+    int num = 2, qtdPrimos = 0;
+    while (qtdPrimos < tam) {
+        if (ehPrimo(v, qtdPrimos, numt)) {
+            v[qtdPrimos] = num;
+            qtdPrimos += 1;
+        }
+        num += 1;
+    }
+}
+
 //q.d
-void maiorPorLinha(int m[][qtd_colunas], int lin, int col, int v[]) {
+void maiorPorLinha (int m[][qtd_colunas], int lin, int col, int v[]) {
     int maior;
     for (int i = 0; i < lin; i++) {
         maior = m[i][0];
@@ -39,6 +62,39 @@ void maiorPorLinha(int m[][qtd_colunas], int lin, int col, int v[]) {
             }
         }
         v[i] = maior;
+    }
+}
+
+//q.e
+void inverterPalavra (char str[], int inicio, int fim) {
+    for (int i = 0 ; i < (fim - inicio + 1) / 2 ; i += 1) {
+        aux = v[inicio + i];
+        str[inicio + 1] = v[fim - i];
+        str[fim - i] = aux;
+    }
+}
+void inverterPalavras (char str[]) {
+    int tam = strlen(str);
+    //intervalo = ultimo numero - primeiro + i
+    int inicio = 0, fim;
+    for (int i = 0; i  < tam ; i+=1) {
+        if (str[i] == ' ') {
+            fim = i - 1;
+            inverterPalavra(str, inicio, fim);
+            inicio = i + 1;
+        }
+    } 
+    inverterPalavra(str, inicio, tam - 1);
+}
+//metodo 2
+void inverterPalavra2 (char str[], int inicio, int fim) {
+    char aux;
+    while (inicio < fim) {
+        aux = str[inicio];
+        str[inicio] = str[fim];
+        str[fim] = aux;
+        inicio += 1;
+        fim -= 1;
     }
 }
 int main() {
