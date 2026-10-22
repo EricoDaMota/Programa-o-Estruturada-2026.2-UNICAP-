@@ -38,5 +38,5 @@ void meuStrCpy (char strDestino[], char strOrigem) {
         strDestino[i] = strOrigem[i];
         i+= 1;
     }
-    strDestino[i] = '\n';
+    strDestino[i] = '\0';
 }
