@@ -39,9 +39,10 @@ int main() {
 }
 
 
-int TamChar (char v[], int tam) {
+
+int TamChar (char v[]) {
     int i = 0;
-    while (i < 50 && v[tam] != '\0') {
+    while (i < 50 && v[i] != '\0') {
         i++;
     }
     return i;
