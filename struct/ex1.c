@@ -15,8 +15,8 @@ struct Data {
 };
 
 struct Compromisso {
-    int data;
-    int horario;
+    struct Horario horario;
+    struct Data data;
     char compromisso[TAM];
 };
 
