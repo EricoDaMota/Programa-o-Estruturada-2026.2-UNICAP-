@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #define TAM_NOMES 40
-#define TAM_ESTADOS 27
+#define TAM_ESTADOS 2
 
 struct Estados {
     char nomeEstado[TAM_NOMES];
