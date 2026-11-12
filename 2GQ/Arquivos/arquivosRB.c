@@ -21,13 +21,17 @@ int main() {
     // }else {
     //     printf("Erro no fechamento do arquivo com o código %d\n", status);
     // }
-
-    status = fread(numeros, sizeof(double), 1, arq);
+    status = fread(&num, sizeof(double), 1, arq);
     while (!feof(arq)) {
         if (status == 1) {
             printf("%f \t", num);
         } else {
             printf("Erro ao ler um número, status = %d\n", status);
+            break;
+        }
+        status = fseek(arq, -1 * sizeof(double), SEEK_CUR);
+        if (status != 0) {
+            printf("\nErro ao tentar modificar o valor do arquivo!\n");
             break;
         }
         status = fclose(arq);
